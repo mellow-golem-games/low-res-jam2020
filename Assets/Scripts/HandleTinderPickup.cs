@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class HandleTinderPickup : MonoBehaviour
 {
 
-    public UnityEngine.Experimental.Rendering.Universal.Light2D PlayerLight;
+    private UnityEngine.Experimental.Rendering.Universal.Light2D PlayerLight;
     // Start is called before the first frame update
     void Start()
     {
-      Debug.Log("stick good");
+      PlayerLight = GameObject.FindWithTag("PlayerLight").GetComponent<Light2D>();
     }
 
     // Update is called once per frame
