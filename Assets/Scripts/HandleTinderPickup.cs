@@ -5,7 +5,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class HandleTinderPickup : MonoBehaviour
 {
-
+    public Score score;
     private UnityEngine.Experimental.Rendering.Universal.Light2D PlayerLight;
     // Start is called before the first frame update
     void Start()
@@ -24,6 +24,7 @@ public class HandleTinderPickup : MonoBehaviour
 
       if(collider.gameObject.name == "Player") {
         PlayerLight.pointLightOuterRadius = PlayerLight.pointLightOuterRadius += 0.5f;
+        score.toCollect--;
         Destroy(gameObject);
       }
     }
