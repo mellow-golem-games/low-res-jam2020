@@ -7,15 +7,23 @@ public class CompleteHandler : MonoBehaviour
 {
 
   private int currentLevel;
+  private string nextLevelString;
 
 
   public void nextLevel() {
     currentLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
-    currentLevel++;
-    PlayerPrefs.SetInt("CurrentLevel", currentLevel);
-
     Debug.Log(currentLevel);
-    SceneManager.LoadScene("Level1");
+    if (currentLevel != 3) {
+
+      currentLevel++;
+      PlayerPrefs.SetInt("CurrentLevel", currentLevel);
+
+      nextLevelString = "Level" + currentLevel;
+      SceneManager.LoadScene(nextLevelString);
+    } else {
+      PlayerPrefs.SetInt("CurrentLevel", 1);
+      SceneManager.LoadScene("Level1");
+    }
   }
 
   public void StartGame()

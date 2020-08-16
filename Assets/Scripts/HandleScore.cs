@@ -21,6 +21,10 @@ public class HandleScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      scoreText.text = "Collect: "+ totalPickups.toCollect;
+      if (totalPickups.toCollect <= 0) {
+        scoreText.text = "Go Home!";
+      } else {
+        scoreText.text = "Collect: "+ totalPickups.toCollect;
+      }
     }
 }

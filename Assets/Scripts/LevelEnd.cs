@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelEnd : MonoBehaviour
 {
     public Score score;
-    public int total = 8;
+    public int total = 5;
 
     void Awake() {
       score.toCollect = total; // each level has it's own number;
